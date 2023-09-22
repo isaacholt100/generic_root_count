@@ -98,7 +98,7 @@ function modified_support(F::Vector{<:MPolyElem})
     return vcat(f_supports, g_supports, h_supports)
 end
 
-function nonlinear_oscillator_polynomials(n::Int, m::Int; specialized::Bool = false)
+function nonlinear_resonator_system(n::Int, m::Int; specialized::Bool = false)
     if specialized
         # concrete values of the parameters
         a = rand(1:99,n+3)
@@ -128,4 +128,4 @@ end
 
 n = 2
 m = 3
-@assert generic_root_count(nonlinear_oscillator_polynomials(n, m)) == 2 * m * n + 1
+@assert generic_root_count(nonlinear_resonator_polynomials(n, m)) == 2 * m * n + 1
